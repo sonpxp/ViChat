@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -56,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUpWithViewPager(ViewPager viewPager) {
-        MainActivity.SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        MainActivity.SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager(),
+                FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         adapter.addFragment(new ChatFragment(), "Chat");
         adapter.addFragment(new StatusFragment(), "Status");
         adapter.addFragment(new CallsFragment(), "Calls");
@@ -64,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //create section pager adapter to viewpager swipe betwin tab
-    public static class SectionsPagerAdapter extends FragmentPagerAdapter{
+    public static class SectionsPagerAdapter extends FragmentStatePagerAdapter{
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
         //constractor
-        public SectionsPagerAdapter(@NonNull FragmentManager fm) {
-            super(fm);
+        public SectionsPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+            super(fm, behavior);
         }
 
         @NonNull
