@@ -1,4 +1,4 @@
-package com.sonmob.vichat.startup;
+package com.sonmob.vichat.view.startup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -10,8 +10,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.sonmob.vichat.MainActivity;
+import com.sonmob.vichat.view.MainActivity;
 import com.sonmob.vichat.R;
+import com.sonmob.vichat.view.auth.PhoneLoginActivity;
 
 public class WelcomeScreenActivity extends AppCompatActivity {
 
@@ -27,7 +28,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         btnAgree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(WelcomeScreenActivity.this, MainActivity.class));
+                startActivity(new Intent(WelcomeScreenActivity.this, PhoneLoginActivity.class));
             }
         });
     }

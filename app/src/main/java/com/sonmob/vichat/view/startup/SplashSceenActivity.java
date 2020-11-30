@@ -1,4 +1,4 @@
-package com.sonmob.vichat;
+package com.sonmob.vichat.view.startup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -9,7 +9,7 @@ import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.sonmob.vichat.startup.WelcomeScreenActivity;
+import com.sonmob.vichat.R;
 
 public class SplashSceenActivity extends AppCompatActivity {
 
@@ -17,7 +17,6 @@ public class SplashSceenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_sceen);
-
         setStatusBarColor();
 
         new Handler().postDelayed(new Runnable() {

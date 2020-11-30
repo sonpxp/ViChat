@@ -1,13 +1,11 @@
-package com.sonmob.vichat;
+package com.sonmob.vichat.view;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -17,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.sonmob.vichat.R;
 import com.sonmob.vichat.databinding.ActivityMainBinding;
 import com.sonmob.vichat.menu.CallsFragment;
 import com.sonmob.vichat.menu.ChatFragment;
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding =  DataBindingUtil.setContentView(this,R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         setUpWithViewPager(binding.viewPager);
         binding.tabLayout.setupWithViewPager(binding.viewPager);
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //create section pager adapter to viewpager swipe betwin tab
-    public static class SectionsPagerAdapter extends FragmentStatePagerAdapter{
+    public static class SectionsPagerAdapter extends FragmentStatePagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             return mFragmentList.size();
         }
 
-        public void addFragment(Fragment fragment, String title){
+        public void addFragment(Fragment fragment, String title) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
         }
@@ -111,23 +110,23 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-            case R.id.menu_search :
+            case R.id.menu_search:
                 Toast.makeText(this, "click menu search", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.menu_more :
+            case R.id.menu_more:
                 Toast.makeText(this, "click menu more", Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void changeFabIcon(final int index){
+    public void changeFabIcon(final int index) {
         binding.fabAction.hide();
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                switch (index){
+                switch (index) {
                     case 0:
                         binding.fabAction.setImageDrawable(getDrawable(R.drawable.fab_chat));
                         break;
@@ -140,6 +139,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 binding.fabAction.show();
             }
-        },400);
+        }, 400);
     }
 }

@@ -30,10 +30,9 @@
                 android:layout_height="20dp"
                 android:layout_alignEnd="@+id/image_profile"
                 android:layout_alignBottom="@+id/image_profile"
-                android:background="@color/white"
+                android:background="@drawable/addcircle"
                 android:scaleType="center"
-                app:tint="@color/colorPrimary"
-                android:src="@drawable/ic_baseline_add_circle_outline_24"/>
+                app:tint="@color/colorPrimary" />
 
         </RelativeLayout>
 

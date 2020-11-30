@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".startup.WelcomeScreenActivity">
+    tools:context=".view.startup.WelcomeScreenActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,12 +18,12 @@
             android:textStyle="bold"
             android:textSize="25sp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="35dp"
             android:text="@string/welcome"/>
 
         <ImageView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="50dp"
             android:src="@drawable/whatsapp"/>
@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:padding="12dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:orientation="vertical">
 

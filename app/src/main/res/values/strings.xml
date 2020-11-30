@@ -8,7 +8,8 @@
     to accept the Terms of Service</string>
     <string name="bottomAgree">Agree and continue</string>
     <string name="fromSmb">S O N M O B</string>
-
+    <string name="youPhone">Enter your phone number</string>
+    <string name="smsVeri">ViChat will send an SMS message to verify your phone number. What\'s my number?</string>
 
 
 </resources>
