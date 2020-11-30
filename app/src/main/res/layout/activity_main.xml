@@ -39,8 +39,7 @@
         android:layout_below="@id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
-        android:layout_marginTop="50dp"/>
+        android:visibility="visible"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_action"
@@ -51,6 +50,5 @@
         android:layout_margin="15dp"
         android:tint="@color/white"
         android:src="@drawable/ic_chat"/>
-
 </RelativeLayout>
 </layout>
